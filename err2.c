@@ -2,23 +2,23 @@
 
 /**
  * _erratoi - converts a string to an integer
- * @s: the string to be converted
+ * @str: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
-int _erratoi(char *s)
+int _erratoi(char *str)
 {
 	int i = 0;
 	unsigned long int result = 0;
 
-	if (*s == '+')
-		s++;  /* TODO: why does this make main return 255? */
-	for (i = 0;  s[i] != '\0'; i++)
+	if (*str == '+')
+		str++;  
+	for (i = 0;  str[i] != '\0'; i++)
 	{
-		if (s[i] >= '0' && s[i] <= '9')
+		if (str[i] >= '0' && str[i] <= '9')
 		{
 			result *= 10;
-			result += (s[i] - '0');
+			result += (str[i] - '0');
 			if (result > INT_MAX)
 				return (-1);
 		}
@@ -53,10 +53,10 @@ void print_error(info_t *info, char *estr)
  *
  * Return: number of characters printed
  */
-int print_d(int input, int fd)
+int print_decimal(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
-	int i, count = 0;
+	int i, cnt = 0;
 	unsigned int _abs_, current;
 
 	if (fd == STDERR_FILENO)
@@ -65,7 +65,7 @@ int print_d(int input, int fd)
 	{
 		_abs_ = -input;
 		__putchar('-');
-		count++;
+		cnt++;
 	}
 	else
 		_abs_ = input;
@@ -75,14 +75,14 @@ int print_d(int input, int fd)
 		if (_abs_ / i)
 		{
 			__putchar('0' + current / i);
-			count++;
+			cnt++;
 		}
 		current %= i;
 	}
 	__putchar('0' + current);
-	count++;
+	cnt++;
 
-	return (count);
+	return (cnt);
 }
 
 /**
