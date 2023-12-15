@@ -28,9 +28,6 @@ All rights reserved
 This is a shell written in [C](https://en.wikipedia.org/wiki/C_(programming_language)).
 It is based on [the Thompson Shell](https://en.wikipedia.org/wiki/Thompson_shell).
 
-## Environment :
-
-Our shell was built and tested on  Ubuntu 14.04 LTS.
 
 ## Features
 * Display a prompt and wait for the user to type a command. A command line always ends with a new line.
