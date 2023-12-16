@@ -12,7 +12,7 @@ int _erratoi(char *str)
 	unsigned long int result = 0;
 
 	if (*str == '+')
-		str++;  
+		str++;
 	for (i = 0;  str[i] != '\0'; i++)
 	{
 		if (str[i] >= '0' && str[i] <= '9')
